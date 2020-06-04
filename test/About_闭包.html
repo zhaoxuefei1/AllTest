@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //闭包: 外部函数里面定义内部函数，内部函数低啊用外部函数的局部变量，外部函数的变量不被释放
+    // var num = 1;
+
+    // function foo() {
+    //   var num = 2;
+
+    //   function bar() {
+    //     var num = 3;
+    //     console.log(num);
+    //   }
+    //   bar();
+    // }
+    // foo();
+
+    // var num = 1;
+
+    // function foo() { //定义的地方
+    //   console.log(num);
+    // }
+
+    // function bar() {
+    //   var num = 2;
+    //   foo(); //调用的地方
+    // }
+
+    // bar();
+
+    //词法作用域：函数在定义他们的的作用域中运行，而不是调用他们的作用域中运行
+
+    function foo() {
+      var num = 1;  //局部变量
+
+      // function bar() {
+      //   console.log(num);
+      // }
+      // return bar; //把作用域里面的东西返回到外部去，让外部也可以使用
+
+      return function () {//相当于把bar这个函数返回出来
+        // debugger; //打断点
+        console.log(num);//在内部函数里面调用了外部函数的变量，从而形成闭包
+      };
+
+    }
+
+    var baz = foo();
+    baz();
+  </script>
+</body>
+
+</html>

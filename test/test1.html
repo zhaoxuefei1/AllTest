@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = "lisi";
+        function foo() {
+            var name = 'wangwu';
+            function Bar() {
+                var name = 'zhaoliu';
+                console.log(name)
+            }
+            Bar();
+        }
+
+        foo();
+    </script>
+</body>
+</html>
+<!--上面的代码 
+    
+    存在哪，怎么找
+
+    存在堆和栈内存中，
+    
+
+    三个执行环境：（每个执行环境被创建的时候都会关联的的创建一个对象，称之为变量对象）
+    1.window全局环境    
+    2.foo函数执行环境
+    3.Bar函数执行环境
+
+    每个环境执行完，里面的环境会被自动释放w
+    web浏览器中，window是全局执行环境，就是window
+-->

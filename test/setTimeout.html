@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // console.log(1);
+
+    // setTimeout(function () {
+    //   console.log(2); //异步操作
+    // }, 1000) //先进入异步队列等待执行，一秒之后从Event Table中跳到Event Queue（任务队列），等同步任务执行完毕，会读取任务队列中的结果，进入主线程执行
+
+    // setTimeout(function () {
+    //   console.log(2); //异步操作
+    // }, 0) //很短的时间进入事件队列中  最低也是4毫秒的时候才能执行
+
+    // console.log(3);
+
+
+    setTimeout(function () {
+      console.log(1);
+    }, 1000) //并不会一秒之后就执行，若主线程的同步任务时间是5s，那么也是等待主线程执行完成后再来执行异步线程的操作
+
+
+    sleep(5000)
+
+    function sleep() {
+      //同步操作 复杂的业务操作 5s执行完
+    }
+  </script>
+</body>
+
+</html>

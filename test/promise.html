@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //ES6  promise的作用就是管理异步操作的状态
+
+    new Promise(function (resolve, reject) {
+      setTimeout(function () {
+        console.log(1);
+        // resolve(); //成功
+        reject(); //失败
+      }, 2000)
+    }).then(function () { //成功执行then
+      console.log('成功' + 2);
+    }).catch(function () {
+      console.log('失败' + 3);
+    }).finally(function () { //不管结果如何,成功或者失败，最后都会执行finally里的代码
+      console.log('finally' + 4);
+    })
+  </script>
+</body>
+
+</html>

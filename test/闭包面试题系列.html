@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // for (let i = 0; i < 3; i++) {
+    //   setTimeout(function () { //异步的,等待执行
+    //     console.log(i);
+    //   }, 1000)
+    // }
+
+    //循环结束是i= 3；
+
+    //ES6 var -> let
+
+
+    for (let i = 0; i < 3; i++) {
+      (function (idx) { //形参也是局部变量
+        setTimeout(function () { //异步的,等待执行
+          console.log(idx);
+        }, 1000)
+      })(i)
+    }
+
+
+
+
+    // var fn = function () {
+    //   console.log(123);
+    // }
+    // (function () {
+    //   console.log(123);
+    // }()); //立即执行函数
+  </script>
+</body>
+
+</html>
